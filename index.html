@@ -3,101 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte</title>
-
+    <title>Agrinho 2026 - Agro Forte, Futuro Sustentável</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body{
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4fff1;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        header{
-            background-color: #2e8b57;
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5fff7 0%, #e8f5e9 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Moderno */
+        header {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #43a047 100%);
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
-        nav{
-            background-color: #256d46;
-            padding: 10px;
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInDown 1s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navegação Fixa */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
-        nav a{
-            color: white;
+        nav:hover {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: #2e7d32;
             text-decoration: none;
-            margin: 15px;
-            font-weight: bold;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        section{
-            padding: 30px;
+        nav a:hover {
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
         }
 
-        .card{
-            background-color: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        /* Seção Principal */
+        .hero-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
         }
 
-        footer{
-            background-color: #2e8b57;
+        .hero-section h2 {
+            font-size: 2.5em;
+            color: #1b5e20;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #555;
+        }
+
+        /* Cards Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Cards Modernos */
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #2e7d32, #66bb6a, #aed581);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15);
+            border-color: #66bb6a;
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card h2 {
+            color: #1b5e20;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        /* Botão Interativo */
+        .btn-agrinho {
+            display: inline-block;
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-agrinho:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+        }
+
+        /* Seção de Estatísticas */
+        .stats-section {
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Footer Moderno */
+        footer {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '🌱';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            background: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        footer .heart {
+            color: #ff6b6b;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Animações */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav a {
+                margin: 5px 10px;
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+                padding: 30px 15px;
+            }
+
+            .hero-section h2 {
+                font-size: 1.8em;
+            }
+
+            .stat-item h3 {
+                font-size: 2em;
+            }
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Efeito de loading */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #2e7d32;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
     <header>
-        <h1>Agro Forte, Futuro Sustentável</h1>
-        <p>O equilíbrio entre produção e meio ambiente</p>
+        <h1>🌾 Agrinho 2026</h1>
+        <p>Agro Forte, Futuro Sustentável 💚</p>
+        <p style="font-size: 1em; margin-top: 10px;">O equilíbrio perfeito entre produção e meio ambiente</p>
     </header>
 
+    <!-- Navegação -->
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Sustentabilidade</a>
-        <a href="#">Tecnologia</a>
-        <a href="#">Contato</a>
+        <a href="#inicio">🏠 Início</a>
+        <a href="#importancia">🌱 Importância</a>
+        <a href="#sustentabilidade">♻️ Sustentabilidade</a>
+        <a href="#tecnologia">🚀 Tecnologia</a>
+        <a href="#contato">📧 Contato</a>
     </nav>
 
-    <section>
+    <!-- Seção Hero -->
+    <section class="hero-section" id="inicio">
+        <h2>Bem-vindo ao Futuro do Agronegócio</h2>
+        <p>Descubra como a agricultura moderna está transformando o mundo através da inovação, sustentabilidade e tecnologia de ponta.</p>
+        <button class="btn-agrinho" onclick="mostrarMensagem()">✨ Explorar Projeto</button>
+    </section>
 
-        <div class="card">
+    <!-- Cards Principais -->
+    <section class="cards-container">
+        
+        <div class="card" id="importancia">
+            <span class="card-icon">🌍</span>
             <h2>Importância do Agro</h2>
             <p>
-                O agronegócio é fundamental para a economia e para a alimentação da população.
-                Com novas tecnologias, o campo se torna mais produtivo e sustentável.
+                O agronegócio é fundamental para a economia brasileira e mundial, 
+                sendo responsável pela alimentação de bilhões de pessoas. Com práticas 
+                inovadoras, o campo se torna cada vez mais produtivo e sustentável, 
+                gerando empregos e desenvolvendo comunidades.
             </p>
         </div>
 
-        <div class="card">
+        <div class="card" id="sustentabilidade">
+            <span class="card-icon">🌿</span>
             <h2>Sustentabilidade</h2>
             <p>
-                A preservação do meio ambiente é essencial para garantir recursos naturais
-                às futuras gerações.
+                A preservação ambiental é essencial para garantir recursos naturais 
+                às futuras gerações. Práticas como rotação de culturas, manejo integrado 
+                e uso consciente da água garantem um futuro verde e próspero para todos.
             </p>
         </div>
 
-        <div class="card">
+        <div class="card" id="tecnologia">
+            <span class="card-icon">🤖</span>
             <h2>Tecnologia no Campo</h2>
             <p>
-                Máquinas modernas, drones e inteligência artificial ajudam a melhorar a produção
-                agrícola de forma consciente.
+                Drones, inteligência artificial, IoT e máquinas autônomas estão 
+                revolucionando a agricultura. Essas tecnologias permitem monitoramento 
+                preciso, redução de desperdícios e aumento da produtividade de forma 
+                inteligente e consciente.
             </p>
         </div>
 
     </section>
 
-    <footer>
-        <p>Desenvolvido por Emanuelle 💚</p>
+    <!-- Seção de Estatísticas -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>25%</h3>
+                <p>do PIB Brasileiro</p>
+            </div>
+            <div class="stat-item">
+                <h3>1 em 3</h3>
+                <p>empregos no Brasil</p>
+            </div>
+            <div class="stat-item">
+                <h3>+50%</h3>
+                <p>crescimento tech</p>
+            </div>
+            <div class="stat-item">
+                <h3>🌱</h3>
+                <p>Futuro Verde</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <p><strong>Projeto Agrinho 2026</strong></p>
+        <p>Desenvolvido com <span class="heart">❤️</span> por Emanuelle</p>
+        <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+            💚 Agro Forte = Futuro Sustentável 💚
+        </p>
     </footer>
+
+    <script>
+        // Remover loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading').classList.add('hidden');
+            }, 500);
+        });
+
+        // Função para mostrar mensagem
+        function mostrarMensagem() {
+            alert("🌾 Bem-vindo ao projeto Agrinho 2026!\n\nObrigado por visitar nosso site sobre o futuro sustentável do agronegócio!");
+        }
+
+        // Efeito de scroll suave nos links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animação dos cards ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animação inicial aos cards
+        document.querySelectorAll('.card').forEach((card, index) => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(30px)";
+            card.style.transition = `all 0.6s ease ${index * 0.2}s`;
+            observer.observe(card);
+        });
+
+        // Mensagem no console
+        console.log("🌾 Bem-vindo ao projeto Agrinho 2026!");
+        console.log("💚 Desenvolvido por Emanuelle");
+    </script>
 
 </body>
 </html>
